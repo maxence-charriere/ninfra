@@ -3,7 +3,6 @@ provider "aws" {
   region  = "us-west-2"
 }
 
-
 resource "aws_vpc" "ninfra" {
   cidr_block = "10.0.0.0/16"
 
@@ -153,11 +152,10 @@ resource "aws_autoscaling_group" "ninfra_autoscaling_group" {
 
 resource "aws_launch_template" "ninfra_launch_template" {
   name_prefix            = "ninfra"
-  image_id               = "ami-081c4a2dcf94faaa0"
+  image_id               = "${var.image_id}"
   instance_type          = "t2.micro"
+  key_name               = "${var.key_name}"
   vpc_security_group_ids = ["${aws_security_group.ninfra_sg_instances.id}"]
-
-  key_name = "ssh-key"
 
   monitoring {
     enabled = true
