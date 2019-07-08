@@ -28,16 +28,16 @@
     "provisioners": [
         {
             "type": "file",
-            "source": "bootstrap.sh",
-            "destination": "/home/ubuntu/bootstrap.sh"
+            "source": "apache-install.sh",
+            "destination": "/home/ubuntu/apache-install.sh"
         },
         {
             "type": "shell",
             "inline": [
                 "sleep 30",
-                "sudo chmod 777 /home/ubuntu/bootstrap.sh",
-                "sudo sh /home/ubuntu/bootstrap.sh",
-                "sudo rm /home/ubuntu/bootstrap.sh"
+                "sudo chmod 777 /home/ubuntu/apache-install.sh",
+                "sudo sh /home/ubuntu/apache-install.sh",
+                "sudo rm /home/ubuntu/apache-install.sh"
             ]
         }
     ]
