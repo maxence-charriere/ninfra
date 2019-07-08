@@ -157,7 +157,7 @@ resource "aws_launch_template" "ninfra_launch_template" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.ninfra_sg_instances.id}"]
 
-  key_name = "ssh"
+  key_name = "ssh-key"
 
   monitoring {
     enabled = true
